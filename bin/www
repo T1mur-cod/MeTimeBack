@@ -32,7 +32,7 @@ function normalizePort(val) {
 /**
  * Create HTTP server.
  */
-const port = normalizePort(process.env.PORT || '6969');
+const port = normalizePort(process.env.PORT);
 app.set('port', port);
 /**
  * Event listener for HTTP server "error" event.
