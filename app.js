@@ -16,10 +16,6 @@ require('dotenv').config();
 
 mongoose
   .connect(process.env.MONGO_URL || 'mongodb://localhost/test', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
   })
   .then(() => {
     console.log('connected to database!', 'pre_populating now...');

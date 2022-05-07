@@ -31,7 +31,7 @@ const trendSchema = mongoose.Schema({
   }],
 });
 let trendInterval;
-trendSchema.statics.refreshTrends = async () => {
+trendSchema.statics.refreshTrends = async function () {
   if (!trendInterval) {
     trendInterval = setInterval(async () => {
       await this.refreshTrends();

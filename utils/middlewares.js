@@ -32,7 +32,7 @@ const sessionMiddleware = session({
   saveUninitialized: true,
   store: new MongoStore({
     mongooseConnection: mongoose.connection,
-    // secret: ,  'this will encrypt my sessions'
+    secret: 'foo',
   }),
   cookie: {
     // secure: true,
