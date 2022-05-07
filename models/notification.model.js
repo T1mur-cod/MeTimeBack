@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 // const { sendData: sendSocketData } = require('../socketApi')
 const webpush = require('web-push');
-const { serializeNotifs } = require('../serializers/notification.serializer');
+// const { serializeNotifs } = require('../serializers/notification.serializer');
 
 const subdocSchema = new mongoose.Schema({
   type: String, // 'replied' || 'mentioned' || '(un)followed' || 'liked' || 'reposted' <| ||  'quoted' || 'recomendation' || 'update'
