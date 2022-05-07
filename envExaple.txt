@@ -1,0 +1,7 @@
+MONGO_URL=<link to atlas address or wherever your mongoDB is deployed, defaults to 'mongodb://localhost/test'>
+SESSION_SECRET=<passed to session middleware(for example = keyboard_cat)>
+
+You can generate them with command "./node_modules/.bin/web-push generate-vapid-keys" in terminal
+PUBLIC_VAPID_KEY=<public vapid key which also goes into React front-end>
+PRIVATE_VAPID_KEY=<corresponding private key>
+WEB_PUSH_CONTACT=<This must be either a URL or a 'mailto:' address.>

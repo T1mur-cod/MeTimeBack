@@ -1,28 +1,13 @@
-const { app } = require('../app');
-const debug = require('debug')('server:server');
 const http = require('http');
+const debug = require('debug')('server:server');
+const { app } = require('../app');
 // var { io } = require('../socketApi');
 
 /**
  * Get port from environment and store in Express.
  */
 
-const port = normalizePort(process.env.PORT || '6969');
-app.set('port', port);
-
-/**
- * Create HTTP server.
- */
-
 const server = http.createServer(app);
-
-/**
- * Listen on provided port, on all network interfaces.
- */
-
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
 
 /**
  * Normalize a port into a number, string, or false.
@@ -44,6 +29,11 @@ function normalizePort(val) {
   return false;
 }
 
+/**
+ * Create HTTP server.
+ */
+const port = normalizePort(process.env.PORT);
+app.set('port', port);
 /**
  * Event listener for HTTP server "error" event.
  */
@@ -79,3 +69,11 @@ function onListening() {
   const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`;
   debug(`Listening on ${bind}`);
 }
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);

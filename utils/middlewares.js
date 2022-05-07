@@ -26,13 +26,13 @@ async function core_ensureLoggedIn(req, _, next) {
   next();
 }
 const sessionMiddleware = session({
-  secret: process.env.SESSION_SECRET || 'my shitty session secret',
+  secret: process.env.SESSION_SECRET || 'keyboard_cat',
   name: 'tclone',
   resave: false,
   saveUninitialized: true,
   store: new MongoStore({
     mongooseConnection: mongoose.connection,
-    // secret: ,  'this will encrypt my sessions'
+    secret: 'foo',
   }),
   cookie: {
     // secure: true,

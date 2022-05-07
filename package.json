@@ -1,10 +1,10 @@
 {
   "name": "metimeback",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www",
+    "mon": "nodemon ./bin/www",
+    "debug": "DEBUG=server:* npm start"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,8 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "compression": "^1.7.4",
-    "connect-mongo": "^4.6.0",
+    "connect-mongo": "^3.2.0",
+    "connect-mongodb-session": "^3.1.1",
     "cookie-parser": "^1.4.6",
     "debug": "^4.3.4",
     "dotenv": "^16.0.0",
