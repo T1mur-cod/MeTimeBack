@@ -1,8 +1,6 @@
 {
   "name": "metimeback",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
     "start": "node ./bin/www",
     "mon": "nodemon ./bin/www",
