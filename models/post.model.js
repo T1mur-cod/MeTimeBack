@@ -67,12 +67,7 @@ const postSchema = mongoose.Schema({
   lang: { type: String, default: null },
 }, { id: false });
 const sPage = 15;
-/**
-* addes a post for specific user
-* @param {String} username - screen_name of user
-* @param {Object} post - post body (partial) to add, must-have feilds: text, ...
-* @returns {Promise} -  One returned by mongoose
-*/
+
 postSchema.statics.addOne = async function ({
   username: screen_name = null,
   user_id = null,
@@ -142,10 +137,6 @@ postSchema.statics.getUserTimeline = async ({
 };
 
 async function post_genId() {
-  /**
-    * generates simple incrementing value
-    * last value alotted is stored in internals collection as last_id_allotted
-    */
   await internal_setting.updateOne({ ver: '1.0' }, {
     $inc: { current_post_id: 1 },
   }, { upsert: true });

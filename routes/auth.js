@@ -57,13 +57,14 @@ router.post('/signup', async (req, res) => {
       });
       return;
     }
-    const user = await User.createNew(
+    const user = await User.create(
       {
         screen_name: username,
         name: fullname,
+        password,
       },
-      { password },
     );
+    console.log('username', user);
     if (user) {
       req.login(
         {
@@ -86,7 +87,7 @@ router.post('/signup', async (req, res) => {
     }
     console.log('user created', user);
   } catch (err) {
-    console.log('error in /signup', err);
+    console.log('error in /signup>>>>>\n', err);
     res.status(400).json({
       message: 'Your request could not be completed',
     });

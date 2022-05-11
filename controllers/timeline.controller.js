@@ -15,6 +15,7 @@ exports.homeTimeline = async (req, res, next) => {
     const page = req.query.p;
     let posts = /* list */await home_timeline.getTimeline({ user_id: user._id }, page);
     posts = await serializePosts(posts, req.user);
+    console.log('timeline controller 1', posts);
     res.json({
       posts, // posts: null or empty when exhausts
     });
@@ -27,7 +28,6 @@ exports.userTimeline = async (req, res, next) => {
     let { username } = req.params;
     let page = req.query.p;
     page = parseInt(page);
-    username = filterInput(username, 'username');
     let user = await User.findOne({ screen_name: username });
     if (!user) {
       res.status(400).json({ message: 'Bad request' });

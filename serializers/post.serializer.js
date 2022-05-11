@@ -38,5 +38,9 @@ exports.serializePosts = async (client, posts = []) => {
   if (!posts instanceof Array) { // includes CoreDocumentArray
     throw Error('Unknown type');
   }
-  return Promise.all(posts.map((post) => this.serializePost(post, client)));
+  if (Array.isArray(posts)) {
+    return Promise.all(posts.map((post) => this.serializePost(post, client)));
+  }
+  console.log('====>', posts);
+  return posts;
 };

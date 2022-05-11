@@ -161,7 +161,7 @@ exports.getReplies = async (req, res, next) => {
     if (!post) { return res.status(400).json({ msg: 'Bad request' }); }
 
     const doc = await PostEngagement
-      .findOne({ post_id: post._id }, {
+      .find({ post_id: post._id }, {
         reply_posts: {
           $slice: [s * (p - 1), s],
         },

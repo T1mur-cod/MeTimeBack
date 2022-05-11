@@ -50,35 +50,12 @@ const userSchema = mongoose.Schema({
   profile_banner_color: { type: String, default: null },
 
   notifications_enabled_device_count: { type: String, default: 0 },
-  // twitter deprecated ones
-  /*
-    "utc_offset": { type: String },
-    "time_zone": { type: String },
-    "lang": { type: String },
-    "geo_enabled": { type: Boolean },
-    "following": { type: Boolean },
-    "follow_request_sent": { type: Boolean },
-    "has_extended_profile": { type: Boolean },
-    "notifications": { type: Boolean },
-    "contributors_enabled": { type: Boolean },
-    "profile_image_url": { type: String },
-    "profile_background_color": { type: String },
-    "profile_background_image_url": { type: String },
-    "profile_background_image_url_https": { type: String },
-    "profile_background_tile": { type: Boolean },
-    "profile_link_color": { type: String },
-    "profile_sidebar_border_color": { type: String },
-    "profile_sidebar_fill_color": { type: String },
-    "profile_text_color": { type: String },
-    "profile_use_background_image": { type: Boolean },
-    "is_translator": { type: Boolean },
-    "is_translation_enabled": { type: Boolean },
-    "translator_type": { type: String },
-    */
 }, { id: false });
+
 /**
  * @param {Object} with two userDat, authDat constaing password and/or sensitive data
  */
+
 userSchema.statics.createNew = async (userDat, authDat) => {
   try {
     const user = await this.create(userDat);
@@ -132,9 +109,7 @@ userSchema.methods.follow = async (...list_id_tobe_friends) => {
     return res;
   }
 };
-/**
- * unfollow() similar to follow()
- */
+
 userSchema.methods.unfollow = async (...list_id_tobe_not_friends) => {
   let res = { ok: 0 };
   try {

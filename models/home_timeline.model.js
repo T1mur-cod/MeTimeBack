@@ -48,6 +48,7 @@ timelineSchema.statics.getTimeline = async ({
       path: 'posts.post_id', // populates post
       // populate: 'user' //populates user feild
     });
+  console.log(posts);
   posts = posts.map((obj) => obj.post_id);
   return posts;
 };

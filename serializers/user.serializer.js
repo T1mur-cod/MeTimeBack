@@ -23,5 +23,9 @@ exports.serializeUser = async (user, client = null) => {
 };
 exports.serializeUsers = async (client, users = []) => {
   if (!users instanceof Array) { throw Error('Unknown type'); }
-  return Promise.all(users.map((user) => this.serializeUser(user, client)));
+
+  if (Array.isArray(users)) {
+    return Promise.all(users.map((user) => this.serializeUser(user, client)));
+  }
+  return users;
 };

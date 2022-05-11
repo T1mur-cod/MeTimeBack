@@ -21,6 +21,7 @@ exports.search = async (req, res, next) => {
       const result = await Post.searchHashtag(query, page);
       // result direct return of find (empty array when no match)
       const posts = await serializePosts(result, req.user);
+      console.log('search controller 1', posts);
       res.json({ posts });
       return;
     }
@@ -29,6 +30,7 @@ exports.search = async (req, res, next) => {
       let posts = await Post.searchUserMention(query, page);
       let users = await User.searchUser(query);
       posts = await serializePosts(posts, req.user);
+      console.log('search controller 2', posts);
       users = await serializeUsers(users, req.user);
       res.json({
         posts,
@@ -41,6 +43,7 @@ exports.search = async (req, res, next) => {
     const result = await Post.searchText(query, page);
     // result is direct return of find()
     const posts = await serializePosts(result, req.user);
+    console.log('search controller 3');
     res.json({ posts });
   } catch (err) {
     next(err);
