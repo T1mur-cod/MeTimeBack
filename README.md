@@ -1,4 +1,3 @@
 # MeTimeBack
-![preview2](https://user-images.githubusercontent.com/76901834/167252466-edfaef2d-d419-450c-9413-6e21e73841e7.gif)
 
-The project is connected with mongodb and deployed on Heroku
+Это Backend-часть проекта русского аналога Твиттера и он задиплоен на Хероку. Скоро задиплоем Frontend-часть и добавлю ссылки.
