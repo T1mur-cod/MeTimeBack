@@ -1,7 +1,3 @@
-# MeTimeBack
-
-Frontend Repository - [https://github.com/T1mur-cod/meTime_front](https://github.com/T1mur-cod/meTime_front)
-
 # MeTime Backend
 MeTime-Front **[here](https://github.com/Vitkanda/meTime_front)**
 
